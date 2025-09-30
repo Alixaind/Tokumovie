@@ -33,11 +33,12 @@
     .then(res => res.json())
     .then(data => {
       const movie = data.find(m => m.id === movieId);
+      const playerContainer = document.querySelector("#video-player-container");
+
       if (movie) {
         document.getElementById("movie-title").textContent = movie.title;
-        const playerContainer = document.querySelector("#video-player-container");
         
-        // Cek tipe video berdasarkan properti 'type' di JSON
+        // Buat pemutar video sesuai tipenya
         if (movie.type === "wistia") {
           // Buat pemutar Wistia
           playerContainer.innerHTML = `
@@ -71,8 +72,10 @@
               Browser tidak mendukung video.
             </video>
           `;
+          const player = document.getElementById("my-video");
+          player.load();
         }
-        
+
         // --- Logika untuk Next Episode (tetap sama) ---
         nextMovie = data.find(m => m.id === movieId + 1);
         if (nextMovie) {
