@@ -29,5 +29,11 @@
     "poster": "https://fast.wistia.com/embed/medias/ikz5sgsu21/thumbnail.jpg",
     "src": "ikz5sgsu21",
     "type": "wistia"
+  },
+  {
+    "id": 6,
+    "title": "Snapsave Video",
+    "poster": "https://ik.imagekit.io/a9tbshmzf/snapsave-app_1870943880483243_hd.mp4/ik-thumbnail.jpg",
+    "src": "https://imagekit.io/player/embed/a9tbshmzf/snapsave-app_1870943880483243_hd.mp4"
   }
 ]
