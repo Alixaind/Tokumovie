@@ -16,5 +16,11 @@
     "title": "Sample Video",
     "poster": "https://ik.imagekit.io/a9tbshmzf/sample-video.mp4/ik-thumbnail.jpg",
     "src": "https://imagekit.io/player/embed/a9tbshmzf/sample-video.mp4/ik-master.m3u8"
+  },
+  {
+    "id": 4,
+    "title": "Video Terbaru",
+    "poster": "https://ik.imagekit.io/a9tbshmzf/null-20250923-WA0002.mp4/ik-thumbnail.jpg",
+    "src": "https://imagekit.io/player/embed/a9tbshmzf/null-20250923-WA0002.mp4/ik-master.mpd"
   }
 ]
