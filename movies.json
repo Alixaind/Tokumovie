@@ -1,0 +1,14 @@
+[
+  {
+    "id": 1,
+    "title": "Episode 1",
+    "poster": "https://picsum.photos/200/300",
+    "src": "movies/episode1.mp4"
+  },
+  {
+    "id": 2,
+    "title": "Episode 2",
+    "poster": "https://picsum.photos/200/301",
+    "src": "movies/episode2.mp4"
+  }
+]

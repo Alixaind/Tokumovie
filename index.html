@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>MovieBox</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-900 text-white">
+
+  <!-- Navbar -->
+  <nav class="flex justify-between items-center p-4 bg-gray-800 shadow">
+    <h1 class="text-2xl font-bold text-red-500">MovieBox</h1>
+    <div class="space-x-4">
+      <a href="#" class="hover:text-red-400">Home</a>
+      <a href="#" class="hover:text-red-400">Series</a>
+      <a href="#" class="hover:text-red-400">Movies</a>
+    </div>
+  </nav>
+
+  <!-- List Movies -->
+  <section class="p-6">
+    <h3 class="text-xl font-bold mb-4">Daftar Film</h3>
+    <div id="movie-list" class="grid grid-cols-2 md:grid-cols-4 gap-4"></div>
+  </section>
+
+  <script>
+    // Load daftar film dari JSON
+    fetch("movies.json")
+      .then(res => res.json())
+      .then(data => {
+        const list = document.getElementById("movie-list");
+        data.forEach(movie => {
+          const card = document.createElement("a");
+          card.href = `movie.html?id=${movie.id}`;
+          card.className = "bg-gray-800 rounded overflow-hidden hover:scale-105 transition block";
+          card.innerHTML = `
+            <img src="${movie.poster}" alt="${movie.title}" class="w-full">
+            <div class="p-2">${movie.title}</div>
+          `;
+          list.appendChild(card);
+        });
+      });
+  </script>
+</body>
+</html>
