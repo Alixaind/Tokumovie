@@ -50,6 +50,13 @@
     "poster": "https://fast.wistia.com/embed/medias/ikz5sgsu21/swatch.jpg",
     "wistiaId": "ikz5sgsu21"
   }
-  ]
+  
+  {
+    "id": "sample-ep1",
+    "title": "Sample Video Episode 1",
+    "poster": "https://ik.imagekit.io/a9tbshmzf/sample-video.mp4/ik-thumbnail.jpg?updatedAt=1759210734633",
+    "src": "https://imagekit.io/player/embed/a9tbshmzf/sample-video.mp4/ik-master.m3u8?updatedAt=1759210734633"
+  }
+  
 
 ]
