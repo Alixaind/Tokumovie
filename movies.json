@@ -2,15 +2,15 @@
   {
     "id": 1,
     "title": "Film Pertama",
-    "thumbnail": "https://i.ibb.co/abcd123/thumb1.jpg",
-    "source": "https://drive.google.com/uc?export=download&id=1AbCdEfGhIjKlMnOp",
+    "poster": "https://i.ibb.co/abcd123/thumb1.jpg",
+    "src": "https://drive.google.com/uc?export=download&id=1AbCdEfGhIjKlMnOp",
     "description": "Sinopsis singkat film pertama."
   },
   {
     "id": 2,
     "title": "Film Kedua",
-    "thumbnail": "https://i.ibb.co/xyz987/thumb2.jpg",
-    "source": "https://drive.google.com/file/d/1BX4J3KbPls8kDneCYFDiEgm9VPKr17Z7/view?usp=drive_link"
+    "poster": "https://i.ibb.co/xyz987/thumb2.jpg",
+    "src": "https://drive.google.com/file/d/1BX4J3KbPls8kDneCYFDiEgm9VPKr17Z7/view?usp=drive_link",
     "description": "Sinopsis singkat film kedua."
   }
 ]
