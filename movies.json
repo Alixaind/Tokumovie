@@ -21,6 +21,13 @@
     "id": 4,
     "title": "Video Terbaru",
     "poster": "https://ik.imagekit.io/a9tbshmzf/null-20250923-WA0002.mp4/ik-thumbnail.jpg",
-    "src": "https://imagekit.io/player/embed/a9tbshmzf/null-20250923-WA0002.mp4/ik-master.mpd"
+    "src": "https://imagekit.io/player/embed/a9tbshmzf/null-20250923-WA0002.mpd"
+  },
+  {
+    "id": 5,
+    "title": "Wistia Video",
+    "poster": "https://fast.wistia.com/embed/medias/ikz5sgsu21/thumbnail.jpg",
+    "src": "ikz5sgsu21",
+    "type": "wistia"
   }
 ]
