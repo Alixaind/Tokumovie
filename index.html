@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Tokumovie</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-900 text-white min-h-screen">
+  <!-- Navbar -->
+  <nav class="flex items-center justify-between p-4 bg-gray-800 shadow">
+    <h1 class="text-xl font-bold">Tokumovie</h1>
+    <input id="searchInput" type="text" placeholder="Cari..." 
+      class="px-2 py-1 rounded bg-gray-700 text-white">
+  </nav>
+
+  <!-- Kategori -->
+  <div class="flex gap-3 p-4 overflow-x-auto bg-gray-800">
+    <button class="px-3 py-1 bg-gray-700 rounded" onclick="filterCategory('all')">All</button>
+    <button class="px-3 py-1 bg-gray-700 rounded" onclick="filterCategory('Kamen Rider')">Kamen Rider</button>
+    <button class="px-3 py-1 bg-gray-700 rounded" onclick="filterCategory('Ultraman')">Ultraman</button>
+    <button class="px-3 py-1 bg-gray-700 rounded" onclick="filterCategory('Super Sentai')">Super Sentai</button>
+  </div>
+
+  <!-- List Film -->
+  <div id="movie-list" class="grid grid-cols-2 md:grid-cols-4 gap-4 p-4"></div>
+
+  <script>
+    let allMovies = [];
+
+    fetch("movies.json")
+      .then(res => res.json())
+      .then(data => {
+        allMovies = data;
+        renderMovies(data);
+      });
+
+    function renderMovies(movies) {
+      const list = document.getElementById("movie-list");
+      list.innerHTML = "";
+      movies.forEach(movie => {
+        const card = document.createElement("a");
+        card.href = `movie.html?id=${movie.id}`;
+        card.className = "bg-gray-800 rounded-lg overflow-hidden shadow hover:scale-105 transition block";
+        card.dataset.title = movie.title;
+
+        card.innerHTML = `
+          <div class="aspect-video overflow-hidden">
+            <img src="${movie.poster}" alt="${movie.title}" class="w-full h-full object-cover">
+          </div>
+          <div class="p-3">
+            <h3 class="text-sm font-semibold truncate">${movie.title}</h3>
+          </div>
+        `;
+        list.appendChild(card);
+      });
+    }
+
+    // Search
+    document.getElementById("searchInput").addEventListener("input", e => {
+      const q = e.target.value.toLowerCase();
+      const filtered = allMovies.filter(m => m.title.toLowerCase().includes(q));
+      renderMovies(filtered);
+    });
+
+    // Filter kategori
+    function filterCategory(cat) {
+      if (cat === "all") {
+        renderMovies(allMovies);
+      } else {
+        renderMovies(allMovies.filter(m => m.title.includes(cat)));
+      }
+    }
+  </script>
+</body>
+</html>
