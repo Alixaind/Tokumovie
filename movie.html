@@ -4,11 +4,6 @@
   <meta charset="UTF-8">
   <title>Tonton Film</title>
   <script src="https://cdn.tailwindcss.com"></script>
-
-  <!-- Video.js -->
-  <link href="https://vjs.zencdn.net/7.21.1/video-js.css" rel="stylesheet" />
-  <script src="https://vjs.zencdn.net/7.21.1/video.min.js"></script>
-
   <style>
     body { background-color: #000; }
   </style>
@@ -18,15 +13,7 @@
   <h1 id="movie-title" class="text-white text-2xl font-bold"></h1>
 
   <!-- Video Player -->
-  <video
-    id="my-video"
-    class="video-js vjs-big-play-centered rounded shadow-lg w-full max-w-4xl"
-    controls
-    preload="auto"
-    data-setup='{}'>
-    <source src="" type="video/mp4" />
-    Browser tidak mendukung video.
-  </video>
+  <div id="video-player-container" class="w-full max-w-4xl"></div>
 
   <!-- Next Episode -->
   <div id="next-episode" class="hidden">
@@ -38,42 +25,68 @@
   </div>
 
   <script>
-    const urlParams = new URLSearchParams(window.location.search);
-    const movieId = parseInt(urlParams.get("id"));
-    let nextMovie = null; // simpan episode berikutnya
+  const urlParams = new URLSearchParams(window.location.search);
+  const movieId = parseInt(urlParams.get("id"));
+  let nextMovie = null;
 
-    fetch("movies.json")
-      .then(res => res.json())
-      .then(data => {
-        const movie = data.find(m => m.id === movieId);
-        if (movie) {
-          // Set judul dan sumber video
-          document.getElementById("movie-title").textContent = movie.title;
-          const video = document.querySelector("#my-video source");
-          video.src = movie.src;
-          video.parentElement.load();
-
-          // Cek episode berikutnya
-          nextMovie = data.find(m => m.id === movieId + 1);
-          if (nextMovie) {
-            const nextEpisodeDiv = document.getElementById("next-episode");
-            const nextLink = document.getElementById("next-link");
-            nextLink.href = `movie.html?id=${nextMovie.id}`;
-            nextLink.textContent = `▶ Next Episode: ${nextMovie.title}`;
-            nextEpisodeDiv.classList.remove("hidden");
-          }
-
-          // Autoplay ke episode berikutnya saat selesai
-          const player = video.parentElement; // video element
-          player.addEventListener("ended", () => {
-            if (nextMovie) {
-              window.location.href = `movie.html?id=${nextMovie.id}`;
-            }
-          });
+  fetch("movies.json")
+    .then(res => res.json())
+    .then(data => {
+      const movie = data.find(m => m.id === movieId);
+      if (movie) {
+        document.getElementById("movie-title").textContent = movie.title;
+        const playerContainer = document.querySelector("#video-player-container"); // Tambahkan id ini ke div player
+        
+        // Cek tipe video berdasarkan URL
+        if (movie.src.includes(".m3u8")) {
+          // Buat iframe untuk video HLS (m3u8)
+          playerContainer.innerHTML = `
+            <iframe
+              class="rounded shadow-lg w-full max-w-4xl"
+              src="${movie.src}"
+              width="560"
+              height="315"
+              frameBorder="0"
+              allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen"
+            ></iframe>
+          `;
         } else {
-          document.body.innerHTML = "<p class='text-white'>Film tidak ditemukan.</p>";
+          // Gunakan tag video untuk video mp4
+          playerContainer.innerHTML = `
+            <video
+              id="my-video"
+              class="rounded shadow-lg w-full max-w-4xl"
+              controls
+              preload="auto">
+              <source src="${movie.src}" type="video/mp4" />
+              Browser tidak mendukung video.
+            </video>
+          `;
         }
-      });
-  </script>
+
+        // --- Logika untuk Next Episode (tetap sama) ---
+        nextMovie = data.find(m => m.id === movieId + 1);
+        if (nextMovie) {
+          const nextEpisodeDiv = document.getElementById("next-episode");
+          const nextLink = document.getElementById("next-link");
+          nextLink.href = `movie.html?id=${nextMovie.id}`;
+          nextLink.textContent = `▶ Next Episode: ${nextMovie.title}`;
+          nextEpisodeDiv.classList.remove("hidden");
+        }
+        
+        // Logika auto-play next episode (hanya untuk video MP4)
+        if (!movie.src.includes(".m3u8")) {
+            const player = document.getElementById("my-video");
+            player.addEventListener("ended", () => {
+              if (nextMovie) {
+                window.location.href = `movie.html?id=${nextMovie.id}`;
+              }
+            });
+        }
+      } else {
+        document.body.innerHTML = "<p class='text-white'>Film tidak ditemukan.</p>";
+      }
+    });
+</script>
 </body>
 </html>
