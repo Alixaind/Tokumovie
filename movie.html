@@ -24,7 +24,7 @@
     </a>
   </div>
 
-  <script>
+ <script>
   const urlParams = new URLSearchParams(window.location.search);
   const movieId = parseInt(urlParams.get("id"));
   let nextMovie = null;
@@ -35,11 +35,20 @@
       const movie = data.find(m => m.id === movieId);
       if (movie) {
         document.getElementById("movie-title").textContent = movie.title;
-        const playerContainer = document.querySelector("#video-player-container"); // Tambahkan id ini ke div player
+        const playerContainer = document.querySelector("#video-player-container");
         
-        // Cek tipe video berdasarkan URL
-        if (movie.src.includes(".m3u8")) {
-          // Buat iframe untuk video HLS (m3u8)
+        // Cek tipe video berdasarkan properti 'type' di JSON
+        if (movie.type === "wistia") {
+          // Buat pemutar Wistia
+          playerContainer.innerHTML = `
+            <div class="rounded shadow-lg w-full max-w-4xl" style="position:relative;height:0;padding-bottom:56.25%">
+                <script src="https://fast.wistia.com/embed/medias/${movie.src}.jsonp" async></script>
+                <script src="https://fast.wistia.com/assets/external/E-v1.js" async></script>
+                <div class="wistia_embed wistia_async_${movie.src} popover=true" style="position:absolute;left:0;top:0;height:100%;width:100%">&nbsp;</div>
+            </div>
+          `;
+        } else if (movie.src.includes(".m3u8") || movie.src.includes(".mpd")) {
+          // Buat iframe untuk video HLS/DASH
           playerContainer.innerHTML = `
             <iframe
               class="rounded shadow-lg w-full max-w-4xl"
@@ -63,7 +72,7 @@
             </video>
           `;
         }
-
+        
         // --- Logika untuk Next Episode (tetap sama) ---
         nextMovie = data.find(m => m.id === movieId + 1);
         if (nextMovie) {
@@ -75,7 +84,7 @@
         }
         
         // Logika auto-play next episode (hanya untuk video MP4)
-        if (!movie.src.includes(".m3u8")) {
+        if (!movie.src.includes(".m3u8") && !movie.src.includes(".mpd") && movie.type !== "wistia") {
             const player = document.getElementById("my-video");
             player.addEventListener("ended", () => {
               if (nextMovie) {
