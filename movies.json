@@ -1,62 +1,20 @@
 [
   {
-    "id": "kr01-ep1",
-    "title": "Kamen Rider Zero-One Episode 1",
-    "poster": "https://fast.wistia.com/embed/medias/ikz5sgsu21/swatch",
-    "wistiaId": "ikz5sgsu21"
+    "id": 1,
+    "title": "Episode 1",
+    "poster": "https://picsum.photos/200/300",
+    "src": "movies/episode1.mp4"
   },
   {
-    "id": "kr01-ep2",
-    "title": "Kamen Rider Zero-One Episode 2",
-    "poster": "https://fast.wistia.com/embed/medias/ikz5sgsu21/swatch",
-    "wistiaId": "ikz5sgsu21"
+    "id": 2,
+    "title": "Episode 2",
+    "poster": "https://picsum.photos/200/301",
+    "src": "movies/episode2.mp4"
   },
   {
-    "id": "ultraman-ep1",
-    "title": "Ultraman Episode 1",
-    "poster": "https://fast.wistia.com/embed/medias/ikz5sgsu21/swatch",
-    "wistiaId": "ikz5sgsu21"
+    "id": 3,
+    "title": "Sample Video",
+    "poster": "https://ik.imagekit.io/a9tbshmzf/sample-video.mp4/ik-thumbnail.jpg",
+    "src": "https://imagekit.io/player/embed/a9tbshmzf/sample-video.mp4/ik-master.m3u8"
   }
-  
-  {
-    "id": "kr-zeroone-ep1",
-    "title": "Kamen Rider Zero-One Episode 1",
-    "poster": "https://fast.wistia.com/embed/medias/ikz5sgsu21/swatch",
-    "wistiaId": "ikz5sgsu21"
-  }
-  
-  {
-    "id": "kr01-ep2",
-    "title": "Kamen Rider Zero-One Episode 1",
-    "poster": "https://i.imgur.com/xxxxxxx.jpg",
-    "wistiaId": "abc123xyz"
-  },
-  {
-    "id": "kr01-ep3",
-    "title": "Kamen Rider Zero-One Episode 2",
-    "poster": "https://i.imgur.com/yyyyyyy.jpg",
-    "wistiaId": "def456uvw"
-  },
-  {
-    "id": "ultraman-ep3",
-    "title": "Ultraman Episode 1",
-    "poster": "https://i.imgur.com/zzzzzzz.jpg",
-    "wistiaId": "ghi789rst"
-  }
-  
-  {
-    "id": "kr-zeroone-ep4",
-    "title": "Kamen Rider Zero-One Episode 1",
-    "poster": "https://fast.wistia.com/embed/medias/ikz5sgsu21/swatch.jpg",
-    "wistiaId": "ikz5sgsu21"
-  }
-  
-  {
-    "id": "sample-ep1",
-    "title": "Sample Video Episode 1",
-    "poster": "https://ik.imagekit.io/a9tbshmzf/sample-video.mp4/ik-thumbnail.jpg?updatedAt=1759210734633",
-    "src": "https://imagekit.io/player/embed/a9tbshmzf/sample-video.mp4/ik-master.m3u8?updatedAt=1759210734633"
-  }
-  
-
 ]
