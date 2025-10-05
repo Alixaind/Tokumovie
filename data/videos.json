@@ -61,14 +61,5 @@
     "episode": "EPS 7",
     "url": "https://dummy.com/ep7",
     "thumbnailUrl": "https://picsum.photos/400/225?random=6"
-  },
-  {
-    "id": "decade1",
-    "category": "KAMEN RIDER",
-    "title": "DECADE",
-    "subtitle": "awal mula sinji menjadi kamen rider decade",
-    "episode": "EPS 1",
-    "url": "https://dummy.com/decade1",
-    "thumbnailUrl": "https://picsum.photos/400/225?random=7"
   }
 ]
