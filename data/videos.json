@@ -1,23 +1,42 @@
 [
   {
     "id": "klg49p",
-    "title": "Tutorial HTML CSS JS Modern",
-    "description": "Video pembelajaran dasar pembuatan web modern dengan clean code.",
+    "category": "KAMEN RIDER",
+    "title": "ZERO ONE",
+    "episode": "EPS 1",
     "url": "https://streamable.com/klg49p",
     "thumbnailUrl": "https://images.streamable.com/image/klg49p.jpg"
   },
   {
     "id": "dQw4w9WgXcQ",
-    "title": "Memahami Konsep Tailwind CSS",
-    "description": "Panduan cepat untuk menguasai utility-first CSS framework.",
+    "category": "KAMEN RIDER",
+    "title": "ZERO ONE",
+    "episode": "EPS 2",
     "url": "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
     "thumbnailUrl": "https://picsum.photos/400/225?random=1"
   },
   {
     "id": "fghij2",
-    "title": "Tips dan Trik JavaScript ES6+",
-    "description": "Fitur-fitur terbaru yang harus Anda ketahui dari JavaScript.",
+    "category": "KAMEN RIDER",
+    "title": "ZERO ONE",
+    "episode": "EPS 3",
     "url": "https://www.youtube.com/watch?v=CqYx05vYF0Q", 
     "thumbnailUrl": "https://picsum.photos/400/225?random=2"
+  },
+  {
+    "id": "sentai1",
+    "category": "SUPER SENTAI",
+    "title": "KING-OHGER",
+    "episode": "EPS 1",
+    "url": "https://dummy.com/sentai1",
+    "thumbnailUrl": "https://picsum.photos/400/225?random=3"
+  },
+  {
+    "id": "sentai2",
+    "category": "SUPER SENTAI",
+    "title": "KING-OHGER",
+    "episode": "EPS 2",
+    "url": "https://dummy.com/sentai2",
+    "thumbnailUrl": "https://picsum.photos/400/225?random=4"
   }
 ]
