@@ -1,0 +1,23 @@
+[
+  {
+    "id": "klg49p",
+    "title": "Tutorial HTML CSS JS Modern",
+    "description": "Video pembelajaran dasar pembuatan web modern dengan clean code.",
+    "url": "https://streamable.com/klg49p",
+    "thumbnailUrl": "https://images.streamable.com/image/klg49p.jpg"
+  },
+  {
+    "id": "dQw4w9WgXcQ",
+    "title": "Memahami Konsep Tailwind CSS",
+    "description": "Panduan cepat untuk menguasai utility-first CSS framework.",
+    "url": "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+    "thumbnailUrl": "https://picsum.photos/400/225?random=1"
+  },
+  {
+    "id": "fghij2",
+    "title": "Tips dan Trik JavaScript ES6+",
+    "description": "Fitur-fitur terbaru yang harus Anda ketahui dari JavaScript.",
+    "url": "https://www.youtube.com/watch?v=CqYx05vYF0Q", 
+    "thumbnailUrl": "https://picsum.photos/400/225?random=2"
+  }
+]
