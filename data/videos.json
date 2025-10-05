@@ -3,6 +3,7 @@
     "id": "klg49p",
     "category": "KAMEN RIDER",
     "title": "ZERO ONE",
+    "subtitle": "awal perubahan aruto menjadi zero one",
     "episode": "EPS 1",
     "url": "https://streamable.com/klg49p",
     "thumbnailUrl": "https://images.streamable.com/image/klg49p.jpg"
@@ -11,6 +12,7 @@
     "id": "dQw4w9WgXcQ",
     "category": "KAMEN RIDER",
     "title": "ZERO ONE",
+    "subtitle": "Pertarungan melawan Humagear pertama",
     "episode": "EPS 2",
     "url": "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
     "thumbnailUrl": "https://picsum.photos/400/225?random=1"
@@ -19,21 +21,57 @@
     "id": "fghij2",
     "category": "KAMEN RIDER",
     "title": "ZERO ONE",
+    "subtitle": "Perekrutan anggota baru",
     "episode": "EPS 3",
     "url": "https://www.youtube.com/watch?v=CqYx05vYF0Q", 
     "thumbnailUrl": "https://picsum.photos/400/225?random=2"
   },
   {
-    "id": "sentai1",
-    "category": "SUPER SENTAI",
-    "title": "KING-OHGER",
-    "episode": "EPS 1",
-    "url": "https://dummy.com/sentai1",
+    "id": "ep4",
+    "category": "KAMEN RIDER",
+    "title": "ZERO ONE",
+    "subtitle": "Episode 4 Zero One",
+    "episode": "EPS 4",
+    "url": "https://dummy.com/ep4",
     "thumbnailUrl": "https://picsum.photos/400/225?random=3"
   },
   {
-    "id": "sentai2",
-    "category": "SUPER SENTAI",
+    "id": "ep5",
+    "category": "KAMEN RIDER",
+    "title": "ZERO ONE",
+    "subtitle": "Episode 5 Zero One",
+    "episode": "EPS 5",
+    "url": "https://dummy.com/ep5",
+    "thumbnailUrl": "https://picsum.photos/400/225?random=4"
+  },
+  {
+    "id": "ep6",
+    "category": "KAMEN RIDER",
+    "title": "ZERO ONE",
+    "subtitle": "Episode 6 Zero One",
+    "episode": "EPS 6",
+    "url": "https://dummy.com/ep6",
+    "thumbnailUrl": "https://picsum.photos/400/225?random=5"
+  },
+  {
+    "id": "ep7",
+    "category": "KAMEN RIDER",
+    "title": "ZERO ONE",
+    "subtitle": "Episode 7 Zero One",
+    "episode": "EPS 7",
+    "url": "https://dummy.com/ep7",
+    "thumbnailUrl": "https://picsum.photos/400/225?random=6"
+  },
+  {
+    "id": "decade1",
+    "category": "KAMEN RIDER",
+    "title": "DECADE",
+    "subtitle": "awal mula sinji menjadi kamen rider decade",
+    "episode": "EPS 1",
+    "url": "https://dummy.com/decade1",
+    "thumbnailUrl": "https://picsum.photos/400/225?random=7"
+  }
+]
     "title": "KING-OHGER",
     "episode": "EPS 2",
     "url": "https://dummy.com/sentai2",
