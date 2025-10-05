@@ -3,16 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Toku movie</title>
+    <title>Toku Movie - Judul Serial</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
-        /* Custom CSS untuk menghilangkan scrollbar pada daftar horizontal (lebih bersih di mobile) */
+        /* Custom CSS untuk menghilangkan scrollbar pada daftar horizontal */
         .no-scrollbar::-webkit-scrollbar {
             display: none;
         }
         .no-scrollbar {
-            -ms-overflow-style: none;  /* IE and Edge */
-            scrollbar-width: none;  /* Firefox */
+            -ms-overflow-style: none;
+            scrollbar-width: none;
         }
     </style>
 </head>
@@ -31,7 +31,7 @@
     </header>
 
     <main class="py-4" id="main-content">
-        <p class="text-center text-gray-500 mt-10">Memuat data dari videos.json...</p>
+        <p class="text-center text-gray-500 mt-10">Memuat data serial...</p>
     </main>
 
     <script>
@@ -39,27 +39,41 @@
         const mainContent = document.getElementById('main-content');
 
         /**
-         * Mengambil semua data video dari service JSON dan mengelompokkannya
-         * berdasarkan properti 'category'.
-         * @returns {Promise<Object>} Objek dengan kunci kategori dan nilai array video.
+         * Mengambil data dan mengelompokkannya berdasarkan Kategori,
+         * kemudian mengambil daftar serial unik (Judul) dalam setiap kategori.
+         * @returns {Promise<Object>} Objek dengan kunci kategori dan nilai array serial unik (termasuk Episode 1).
          */
-        async function fetchAndGroupVideos() {
+        async function fetchAndGroupSerial() {
             try {
                 const response = await fetch(API_URL);
-                if (!response.ok) {
-                    throw new Error(`HTTP error! Status: ${response.status}`);
-                }
+                if (!response.ok) throw new Error(`HTTP error! Status: ${response.status}`);
                 const videos = await response.json();
                 
-                // Mengelompokkan data berdasarkan kategori
-                return videos.reduce((groups, item) => {
-                    const category = item.category || 'LAINNYA'; // Fallback kategori
-                    if (!groups[category]) {
-                        groups[category] = [];
+                // Peta untuk menyimpan ID serial (Judul) pertama yang ditemukan
+                const serialMap = {}; 
+
+                videos.forEach(item => {
+                    const category = item.category || 'LAINNYA';
+                    const serialTitle = item.title;
+
+                    if (!serialMap[category]) {
+                        serialMap[category] = {};
                     }
-                    groups[category].push(item);
-                    return groups;
-                }, {});
+                    
+                    // Hanya simpan item jika ini adalah Episode 1 atau item pertama yang ditemukan untuk serial tersebut
+                    // Ini untuk memastikan tautan di halaman index mengarah ke awal serial
+                    if (!serialMap[category][serialTitle] || item.episode === "EPS 1" || item.episode === "EPISODE 1") {
+                         serialMap[category][serialTitle] = item;
+                    }
+                });
+                
+                // Mengubah serialMap menjadi format Category: [Serial1, Serial2, ...]
+                const groupedSerials = {};
+                for (const category in serialMap) {
+                    groupedSerials[category] = Object.values(serialMap[category]);
+                }
+                
+                return groupedSerials;
 
             } catch (error) {
                 console.error("Gagal mengambil data JSON:", error);
@@ -69,39 +83,37 @@
         }
 
         /**
-         * Membuat elemen HTML untuk sebuah kartu video.
-         * @param {Object} video - Objek data video.
-         * @returns {HTMLElement} Elemen <a> (kartu)
+         * Membuat elemen HTML untuk kartu serial (Judul).
          */
-        function createVideoCard(video) {
+        function createSerialCard(serialData) {
             const card = document.createElement('a');
             
-            // Link ke halaman player.html (asumsi player.html sudah dibuat)
-            card.href = `movieplayer.html?id=${video.id}`; 
+            // Tautan diarahkan ke player.html menggunakan ID dari Episode 1 (atau episode yang diambil)
+            card.href = `player.html?id=${serialData.id}`; 
             
             card.className = 'flex-shrink-0 w-32 md:w-40 bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow duration-200';
             card.innerHTML = `
-                <div class="w-full h-40 bg-gray-200 rounded-t-lg overflow-hidden">
-                    <img src="${video.thumbnailUrl}" alt="${video.title} ${video.episode}" class="w-full h-full object-cover">
+                <div class="w-full h-40 bg-gray-200 rounded-t-lg overflow-hidden flex items-center justify-center text-center text-sm text-gray-500">
+                    <img src="${serialData.thumbnailUrl}" alt="${serialData.title}" class="w-full h-full object-cover">
                 </div>
                 <div class="p-2">
-                    <p class="text-sm font-semibold text-gray-800 truncate">${video.title}</p>
-                    <p class="text-xs font-bold text-green-600">${video.episode}</p>
+                    <p class="text-xs font-semibold text-gray-500 uppercase">${serialData.category}</p>
+                    <p class="text-sm font-bold text-gray-800">${serialData.title}</p>
                 </div>
             `;
             return card;
         }
 
         /**
-         * Merender semua kategori dan daftar video ke DOM.
+         * Merender semua kategori dan daftar serial ke DOM.
          */
         async function renderTokuMovieIndex() {
-            const groupedVideos = await fetchAndGroupVideos();
+            const groupedSerials = await fetchAndGroupSerial();
             mainContent.innerHTML = ''; // Bersihkan konten loading
 
-            // Iterasi melalui setiap kategori yang dikelompokkan
-            for (const category in groupedVideos) {
-                const videos = groupedVideos[category];
+            // Iterasi melalui setiap kategori
+            for (const category in groupedSerials) {
+                const serials = groupedSerials[category];
 
                 // 1. Buat elemen Section untuk Kategori
                 const section = document.createElement('section');
@@ -110,18 +122,22 @@
                 // 2. Tambahkan Judul Kategori
                 section.innerHTML = `
                     <h2 class="text-lg font-bold text-gray-800 uppercase px-4 mb-3">${category}</h2>
-                    <div class="flex overflow-x-auto space-x-4 px-4 pb-4 no-scrollbar" data-category="${category.toLowerCase().replace(/\s/g, '-')}" id="list-${category.toLowerCase().replace(/\s/g, '-')}">
+                    <div class="flex overflow-x-auto space-x-4 px-4 pb-4 no-scrollbar">
                         </div>
                 `;
 
                 // 3. Render Kartu ke dalam Daftar Horizontal
                 const listContainer = section.querySelector('.flex');
-                videos.forEach(video => {
-                    listContainer.appendChild(createVideoCard(video));
+                serials.forEach(serial => {
+                    listContainer.appendChild(createSerialCard(serial));
                 });
                 
                 // 4. Masukkan Section ke dalam Main Content
                 mainContent.appendChild(section);
+            }
+            
+            if (Object.keys(groupedSerials).length === 0) {
+                 mainContent.innerHTML = '<p class="text-center text-gray-500 mt-10">Tidak ada serial yang ditemukan.</p>';
             }
         }
 
