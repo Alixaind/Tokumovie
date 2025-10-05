@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title id="page-title">Memutar Video</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 min-h-screen font-sans">
+
+    <header class="bg-white shadow-md">
+        <div class="max-w-6xl mx-auto py-4 px-4 sm:px-6 lg:px-8">
+            <a href="index.html" class="inline-flex items-center text-indigo-600 hover:text-indigo-800 transition font-medium">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+                </svg>
+                Kembali ke Daftar
+            </a>
+        </div>
+    </header>
+
+    <main class="max-w-6xl mx-auto py-8 px-4 sm:px-6 lg:px-8">
+        <section class="bg-white p-6 md:p-8 rounded-xl shadow-2xl">
+            <h1 id="video-title" class="text-3xl font-extrabold text-gray-900 mb-4">Memuat Judul Video...</h1>
+            
+            <div id="player-container" class="mb-6">
+                <div class="bg-gray-200 aspect-video rounded-lg animate-pulse"></div>
+            </div>
+
+            <h2 class="text-xl font-semibold mb-2 text-indigo-600">Deskripsi</h2>
+            <p id="video-description" class="text-gray-600 italic">Memuat deskripsi video...</p>
+        </section>
+    </main>
+
+    <script>
+        const API_URL = './data/videos.json';
+
+        // --- UTILITY FUNCTION (Konversi URL) ---
+        function getEmbedUrl(videoUrl, videoId) {
+            if (videoUrl.includes("streamable.com")) {
+                // Streamable: Ubah dari /ID menjadi /e/ID
+                return `https://streamable.com/e/${videoId}?autoplay=1&loop=0`;
+            } else if (videoUrl.includes("youtube.com") || videoUrl.includes("youtu.be")) {
+                // YouTube: Ambil ID dari URL
+                try {
+                    const urlObj = new URL(videoUrl);
+                    const youtubeId = urlObj.searchParams.get("v") || videoId;
+                    return `https://www.youtube.com/embed/${youtubeId}?autoplay=1&rel=0`;
+                } catch (e) {
+                     return `https://www.youtube.com/embed/${videoId}?autoplay=1&rel=0`;
+                }
+            }
+            return videoUrl;
+        }
+        
+        // --- SERVICE FUNCTION (Mencari data berdasarkan ID) ---
+        async function fetchVideoById(id) {
+            try {
+                const response = await fetch(API_URL);
+                if (!response.ok) throw new Error(`HTTP error! Status: ${response.status}`);
+                
+                const videos = await response.json();
+                return videos.find(video => video.id === id);
+
+            } catch (error) {
+                console.error("Gagal mengambil atau mencari video:", error);
+                return null;
+            }
+        }
+
+        // --- RENDER LOGIC ---
+        async function renderPlayerPage() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const videoId = urlParams.get('id');
+
+            const titleElement = document.getElementById('video-title');
+            const descElement = document.getElementById('video-description');
+            const playerContainer = document.getElementById('player-container');
+            const pageTitle = document.getElementById('page-title');
+
+            if (!videoId) {
+                titleElement.textContent = "Kesalahan: ID Video Tidak Ditemukan";
+                playerContainer.innerHTML = '<p class="text-red-500 text-center py-10">URL tidak valid.</p>';
+                return;
+            }
+
+            const video = await fetchVideoById(videoId);
+
+            if (video) {
+                const embedSrc = getEmbedUrl(video.url, video.id);
+
+                pageTitle.textContent = video.title;
+                titleElement.textContent = video.title;
+                descElement.textContent = video.description;
+                
+                playerContainer.innerHTML = `
+                    <div class="relative w-full aspect-video rounded-lg overflow-hidden shadow-xl">
+                        <iframe 
+                            allow="fullscreen; autoplay; encrypted-media" 
+                            allowfullscreen 
+                            height="100%" 
+                            src="${embedSrc}" 
+                            width="100%" 
+                            style="border:none; width:100%; height:100%; position:absolute; left:0px; top:0px; overflow:hidden;"
+                        ></iframe>
+                    </div>
+                `;
+
+            } else {
+                titleElement.textContent = "Video Tidak Ditemukan";
+                descElement.textContent = "Data video yang Anda cari tidak ada dalam database.";
+                playerContainer.innerHTML = '<p class="text-red-500 text-center py-10">Data video tidak valid.</p>';
+            }
+        }
+
+        // Jalankan fungsi saat halaman dimuat
+        document.addEventListener('DOMContentLoaded', renderPlayerPage);
+    </script>
+</body>
+</html>
