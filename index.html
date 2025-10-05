@@ -3,78 +3,130 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Daftar Video Modern</title>
+    <title>Toku movie</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Custom CSS untuk menghilangkan scrollbar pada daftar horizontal (lebih bersih di mobile) */
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;  /* IE and Edge */
+            scrollbar-width: none;  /* Firefox */
+        }
+    </style>
 </head>
-<body class="bg-gray-50 min-h-screen font-sans">
+<body class="bg-gray-100 min-h-screen font-sans">
 
-    <header class="bg-indigo-700 text-white shadow-lg">
-        <div class="max-w-6xl mx-auto py-5 px-4 sm:px-6 lg:px-8">
-            <h1 class="text-3xl font-extrabold">Video Library 🎬</h1>
-            <p class="text-indigo-200 mt-1">Pilih thumbnail untuk memutar video</p>
+    <header class="bg-white shadow-sm sticky top-0 z-10">
+        <div class="max-w-full mx-auto p-4 flex justify-between items-center border-b border-gray-200">
+            <h1 class="text-xl font-bold text-blue-600">Toku movie</h1>
+            
+            <button class="p-1 text-gray-600 hover:text-blue-600 transition-colors">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                </svg>
+            </button>
         </div>
     </header>
 
-    <main class="max-w-6xl mx-auto py-10 px-4 sm:px-6 lg:px-8">
-        <div id="video-list" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-            <p class="text-center text-gray-500 col-span-full">Memuat video dari service...</p>
-        </div>
+    <main class="py-4" id="main-content">
+        <p class="text-center text-gray-500 mt-10">Memuat data dari videos.json...</p>
     </main>
 
     <script>
         const API_URL = './data/videos.json';
+        const mainContent = document.getElementById('main-content');
 
-        // --- SERVICE FUNCTION (Mengambil semua data) ---
-        async function fetchVideos() {
+        /**
+         * Mengambil semua data video dari service JSON dan mengelompokkannya
+         * berdasarkan properti 'category'.
+         * @returns {Promise<Object>} Objek dengan kunci kategori dan nilai array video.
+         */
+        async function fetchAndGroupVideos() {
             try {
                 const response = await fetch(API_URL);
                 if (!response.ok) {
                     throw new Error(`HTTP error! Status: ${response.status}`);
                 }
-                return await response.json();
+                const videos = await response.json();
+                
+                // Mengelompokkan data berdasarkan kategori
+                return videos.reduce((groups, item) => {
+                    const category = item.category || 'LAINNYA'; // Fallback kategori
+                    if (!groups[category]) {
+                        groups[category] = [];
+                    }
+                    groups[category].push(item);
+                    return groups;
+                }, {});
+
             } catch (error) {
-                console.error("Gagal mengambil data video:", error);
-                const videoListContainer = document.getElementById('video-list');
-                videoListContainer.innerHTML = '<p class="text-center text-red-500 col-span-full">Gagal memuat data dari videos.json. Pastikan Anda menjalankan proyek dengan server lokal!</p>';
-                return [];
+                console.error("Gagal mengambil data JSON:", error);
+                mainContent.innerHTML = '<p class="text-center text-red-500 mt-10">Gagal memuat data dari videos.json. Pastikan Anda menjalankan proyek dengan server lokal!</p>';
+                return {};
             }
         }
 
-        // --- RENDER LOGIC ---
-        async function renderVideoList() {
-            const videos = await fetchVideos();
-            const videoListContainer = document.getElementById('video-list');
-            videoListContainer.innerHTML = ''; // Hapus pesan 'Memuat...'
-
-            if (videos.length === 0) return;
+        /**
+         * Membuat elemen HTML untuk sebuah kartu video.
+         * @param {Object} video - Objek data video.
+         * @returns {HTMLElement} Elemen <a> (kartu)
+         */
+        function createVideoCard(video) {
+            const card = document.createElement('a');
             
-            videos.forEach(video => {
-                const videoCard = document.createElement('a');
-                
-                // Link ke player.html dengan ID video di URL
-                videoCard.href = `movieplayer.html?id=${video.id}`; 
-                
-                videoCard.className = 'block bg-white rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:scale-[1.02] overflow-hidden group cursor-pointer';
-                videoCard.innerHTML = `
-                    <div class="relative aspect-video overflow-hidden">
-                        <img src="${video.thumbnailUrl}" alt="${video.title}" class="w-full h-full object-cover">
-                        <div class="absolute inset-0 flex items-center justify-center bg-black bg-opacity-30 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                            <svg class="w-16 h-16 text-white" fill="currentColor" viewBox="0 0 20 20">
-                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clip-rule="evenodd" />
-                            </svg>
-                        </div>
-                    </div>
-                    <div class="p-4">
-                        <h2 class="text-xl font-bold text-gray-800 truncate">${video.title}</h2>
-                        <p class="text-sm text-gray-500 line-clamp-2 mt-1">${video.description}</p>
-                    </div>
-                `;
-                videoListContainer.appendChild(videoCard);
-            });
+            // Link ke halaman player.html (asumsi player.html sudah dibuat)
+            card.href = `movieplayer.html?id=${video.id}`; 
+            
+            card.className = 'flex-shrink-0 w-32 md:w-40 bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow duration-200';
+            card.innerHTML = `
+                <div class="w-full h-40 bg-gray-200 rounded-t-lg overflow-hidden">
+                    <img src="${video.thumbnailUrl}" alt="${video.title} ${video.episode}" class="w-full h-full object-cover">
+                </div>
+                <div class="p-2">
+                    <p class="text-sm font-semibold text-gray-800 truncate">${video.title}</p>
+                    <p class="text-xs font-bold text-green-600">${video.episode}</p>
+                </div>
+            `;
+            return card;
         }
 
-        // Jalankan fungsi saat halaman dimuat
-        document.addEventListener('DOMContentLoaded', renderVideoList);
+        /**
+         * Merender semua kategori dan daftar video ke DOM.
+         */
+        async function renderTokuMovieIndex() {
+            const groupedVideos = await fetchAndGroupVideos();
+            mainContent.innerHTML = ''; // Bersihkan konten loading
+
+            // Iterasi melalui setiap kategori yang dikelompokkan
+            for (const category in groupedVideos) {
+                const videos = groupedVideos[category];
+
+                // 1. Buat elemen Section untuk Kategori
+                const section = document.createElement('section');
+                section.className = 'mb-8';
+
+                // 2. Tambahkan Judul Kategori
+                section.innerHTML = `
+                    <h2 class="text-lg font-bold text-gray-800 uppercase px-4 mb-3">${category}</h2>
+                    <div class="flex overflow-x-auto space-x-4 px-4 pb-4 no-scrollbar" data-category="${category.toLowerCase().replace(/\s/g, '-')}" id="list-${category.toLowerCase().replace(/\s/g, '-')}">
+                        </div>
+                `;
+
+                // 3. Render Kartu ke dalam Daftar Horizontal
+                const listContainer = section.querySelector('.flex');
+                videos.forEach(video => {
+                    listContainer.appendChild(createVideoCard(video));
+                });
+                
+                // 4. Masukkan Section ke dalam Main Content
+                mainContent.appendChild(section);
+            }
+        }
+
+        // Jalankan fungsi saat DOM selesai dimuat
+        document.addEventListener('DOMContentLoaded', renderTokuMovieIndex);
     </script>
 </body>
 </html>
