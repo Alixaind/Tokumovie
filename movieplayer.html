@@ -3,181 +3,121 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title id="page-title">Memutar Video</title>
+    <title>TokuMovie Player</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
     <style>
-        /* Sembunyikan scrollbar untuk daftar episode horizontal (opsional) */
-        .no-scrollbar::-webkit-scrollbar {
-            display: none;
-        }
-        .no-scrollbar {
-            -ms-overflow-style: none;
-            scrollbar-width: none;
-        }
-        /* Penyesuaian agar player card episode sejajar 3 kolom di layar lebar */
-        .episode-grid {
-             grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
-        }
-        @media (min-width: 640px) {
-            .episode-grid {
-                 grid-template-columns: repeat(3, 1fr);
-            }
+        /* Memastikan video memenuhi lebar container */
+        #videoPlayer {
+            width: 100%;
+            height: auto;
+            min-height: 200px; /* Minimal tinggi agar terlihat */
+            background-color: black;
         }
     </style>
 </head>
-<body class="bg-gray-100 min-h-screen font-sans">
+<body class="bg-gray-50 min-h-screen font-sans">
 
-    <header class="bg-blue-600 text-white shadow-sm sticky top-0 z-10">
-        <div class="max-w-full mx-auto p-4 flex justify-between items-center">
-            <a href="index.html" id="header-category" class="text-xl font-bold transition-opacity hover:opacity-80">KAMEN RIDER</a>
-            
-            <button class="p-1 text-white hover:text-gray-200 transition-colors">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
-                </svg>
-            </button>
+    <header class="bg-blue-600 text-white shadow-lg">
+        <div class="max-w-7xl mx-auto py-3 px-4 sm:px-6 lg:px-8 flex justify-between items-center">
+            <a href="index.html" class="text-xl font-bold">← Toku Movie</a>
         </div>
     </header>
 
-    <main class="pb-8">
-        <div id="video-player-container" class="bg-gray-200 aspect-video w-full flex items-center justify-center text-center text-gray-500 text-lg font-bold">
-            INI ADALAH VIDEO PLAYER
+    <main class="max-w-7xl mx-auto py-8 px-4 sm:px-6 lg:px-8">
+        
+        <div class="bg-white rounded-lg shadow-xl overflow-hidden mb-6">
+            <video id="videoPlayer" controls autoplay></video>
         </div>
 
-        <div class="p-4 bg-white shadow-md mb-6">
-            <h2 id="video-title" class="text-lg font-bold text-gray-800">Memuat Judul...</h2>
-            <p id="video-subtitle" class="text-sm text-blue-600 mt-1">Memuat sub judul...</p>
-            <p id="video-episode" class="text-xs font-bold text-green-600 mt-1">Memuat EPS...</p>
+        <div class="p-4 bg-white rounded-lg shadow-md border-t-4 border-blue-600">
+            <p id="videoCategory" class="text-sm font-semibold text-blue-600 uppercase mb-1"></p>
+            <h1 id="videoTitle" class="text-2xl font-bold text-gray-800">Memuat...</h1>
+            <h2 id="videoSubtitle" class="text-lg text-gray-600 mb-2"></h2>
+            <p id="videoEpisode" class="text-md text-gray-500"></p>
         </div>
-
-        <section class="px-4">
-            <h3 class="text-base font-semibold text-gray-800 mb-4">Episode Lain</h3>
-            <div id="episode-list" class="grid episode-grid gap-4 sm:gap-6">
-                <p class="text-gray-500 col-span-full">Memuat daftar episode...</p>
-            </div>
-        </section>
 
     </main>
 
     <script>
-        const API_URL = './data/videos.json';
-
-        // --- UTILITY FUNCTIONS ---
-
-        /** Mengkonversi URL non-embed ke URL embed */
-        function getEmbedUrl(videoUrl, videoId) {
-            if (videoUrl.includes("streamable.com")) {
-                return `https://streamable.com/e/${videoId}?autoplay=1&loop=0`;
-            } else if (videoUrl.includes("youtube.com") || videoUrl.includes("youtu.be")) {
-                try {
-                    const urlObj = new URL(videoUrl);
-                    const youtubeId = urlObj.searchParams.get("v") || videoId;
-                    return `https://www.youtube.com/embed/${youtubeId}?autoplay=1&rel=0`;
-                } catch (e) {
-                     return `https://www.youtube.com/embed/${videoId}?autoplay=1&rel=0`;
-                }
-            }
-            return videoUrl; // Fallback
-        }
+        // File path ke data JSON Anda
+        const JSON_URL = './data/videos.json';
         
-        /** Mengambil semua data video dari service JSON */
-        async function fetchVideos() {
+        const videoPlayer = document.getElementById('videoPlayer');
+        const videoTitle = document.getElementById('videoTitle');
+        const videoSubtitle = document.getElementById('videoSubtitle');
+        const videoEpisode = document.getElementById('videoEpisode');
+        const videoCategory = document.getElementById('videoCategory');
+
+        /** Mendapatkan ID Video dari URL (misal: ?id=zeroone_01) */
+        function getVideoIdFromUrl() {
+            const params = new URLSearchParams(window.location.search);
+            return params.get('id');
+        }
+
+        /** Mengambil data JSON dan mencari video yang sesuai */
+        async function loadVideo() {
+            const videoId = getVideoIdFromUrl();
+            if (!videoId) {
+                videoTitle.textContent = "Error: ID video tidak ditemukan.";
+                return;
+            }
+
             try {
-                const response = await fetch(API_URL);
-                if (!response.ok) throw new Error(`HTTP error! Status: ${response.status}`);
-                return await response.json();
+                // Fetch data dari file videos.json
+                const response = await fetch(JSON_URL);
+                if (!response.ok) {
+                    throw new Error(`Gagal memuat file JSON: ${response.statusText}`);
+                }
+                const videos = await response.json();
+                
+                // Cari data video yang sesuai dengan ID
+                const videoData = videos.find(v => v.id === videoId);
+
+                if (videoData) {
+                    displayVideoDetails(videoData);
+                    playHlsVideo(videoData.url);
+                } else {
+                    videoTitle.textContent = `Error: Video dengan ID "${videoId}" tidak ditemukan.`;
+                }
+
             } catch (error) {
-                console.error("Gagal mengambil data JSON:", error);
-                return null;
+                console.error("Kesalahan saat memuat data:", error);
+                videoTitle.textContent = `Error: Gagal memuat data video. Cek file videos.json.`;
             }
         }
 
-        // --- RENDER FUNCTIONS ---
-
-        /** Merender player video utama */
-        function renderMainPlayer(video) {
-            const container = document.getElementById('video-player-container');
-            const embedSrc = getEmbedUrl(video.url, video.id);
-
-            container.innerHTML = `
-                <div class="relative w-full aspect-video">
-                    <iframe 
-                        allow="fullscreen; autoplay; encrypted-media" 
-                        allowfullscreen 
-                        height="100%" 
-                        src="${embedSrc}" 
-                        width="100%" 
-                        style="border:none; width:100%; height:100%; position:absolute; left:0px; top:0px; overflow:hidden;"
-                    ></iframe>
-                </div>
-            `;
-
-            // Update Detail Info
-            document.getElementById('header-category').textContent = video.category;
-            document.getElementById('video-title').textContent = video.title;
-            document.getElementById('video-subtitle').textContent = video.subtitle;
-            document.getElementById('video-episode').textContent = video.episode;
-            document.getElementById('page-title').textContent = `${video.title} ${video.episode}`;
-        }
-        
-        /** Merender daftar episode lain dari serial yang sama */
-        function renderEpisodeList(currentVideo, allVideos) {
-            const listContainer = document.getElementById('episode-list');
-            listContainer.innerHTML = ''; 
-
-            // Filter episode yang memiliki JUDUL yang sama dengan video saat ini
-            const relatedEpisodes = allVideos.filter(v => 
-                v.title === currentVideo.title && v.id !== currentVideo.id
-            );
-
-            if (relatedEpisodes.length === 0) {
-                 listContainer.innerHTML = '<p class="text-gray-500 col-span-full">Tidak ada episode lain dalam serial ini.</p>';
-                 return;
-            }
-
-            relatedEpisodes.forEach(video => {
-                const card = document.createElement('a');
-                card.href = `player.html?id=${video.id}`; // Link ke halaman player yang sama
-                
-                card.className = 'block bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow duration-200 overflow-hidden';
-                card.innerHTML = `
-                    <div class="w-full h-24 sm:h-32 bg-gray-200 rounded-t-lg overflow-hidden">
-                         <img src="${video.thumbnailUrl}" alt="${video.title} ${video.episode}" class="w-full h-full object-cover">
-                    </div>
-                    <div class="p-2 text-center">
-                        <p class="text-sm font-semibold text-gray-800 truncate">${video.title}</p>
-                        <p class="text-xs font-bold text-green-600">${video.episode}</p>
-                    </div>
-                `;
-                listContainer.appendChild(card);
-            });
-        }
-        
-        // --- INITIALIZATION ---
-        async function initPlayerPage() {
-            const urlParams = new URLSearchParams(window.location.search);
-            const videoId = urlParams.get('id');
-
-            const allVideos = await fetchVideos();
-            if (!allVideos) return;
-            
-            const currentVideo = allVideos.find(v => v.id === videoId);
-
-            if (currentVideo) {
-                // 1. Render Player Utama dan Detail
-                renderMainPlayer(currentVideo);
-                
-                // 2. Render Daftar Episode Lain
-                renderEpisodeList(currentVideo, allVideos);
+        /** Memainkan video HLS menggunakan HLS.js */
+        function playHlsVideo(videoUrl) {
+            if (Hls.isSupported()) {
+                const hls = new Hls();
+                hls.loadSource(videoUrl);
+                hls.attachMedia(videoPlayer);
+                hls.on(Hls.Events.MANIFEST_PARSED, function() {
+                    videoPlayer.play();
+                });
+            } else if (videoPlayer.canPlayType('application/vnd.apple.mpegurl')) {
+                // Solusi fallback untuk Safari (yang mendukung HLS secara native)
+                videoPlayer.src = videoUrl;
+                videoPlayer.addEventListener('loadedmetadata', function() {
+                    videoPlayer.play();
+                });
             } else {
-                // Handle Error
-                document.getElementById('video-player-container').textContent = 'VIDEO TIDAK DITEMUKAN';
-                document.getElementById('video-title').textContent = 'Kesalahan: Video ID tidak valid.';
-                document.getElementById('episode-list').innerHTML = '<p class="text-red-500 col-span-full">ID video tidak ditemukan dalam database.</p>';
+                videoTitle.textContent = "Error: Browser Anda tidak mendukung pemutaran HLS.";
             }
         }
 
-        document.addEventListener('DOMContentLoaded', initPlayerPage);
+        /** Memperbarui detail tampilan */
+        function displayVideoDetails(data) {
+            videoTitle.textContent = data.title;
+            videoSubtitle.textContent = data.subtitle;
+            videoEpisode.textContent = data.episode;
+            videoCategory.textContent = data.category;
+            document.title = `${data.title} ${data.episode} | TokuMovie`;
+        }
+
+        // Jalankan saat halaman dimuat
+        document.addEventListener('DOMContentLoaded', loadVideo);
     </script>
 </body>
 </html>
