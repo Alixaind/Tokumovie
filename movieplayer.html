@@ -194,7 +194,7 @@
             }
 
             relatedEpisodesContainer.innerHTML = episodes.map(item => `
-                <a href="player.html?id=${item.id}" class="block bg-white rounded-lg shadow-md hover:shadow-lg transition transform hover:scale-[1.02]">
+                <a href="movieplayer.html?id=${item.id}" class="block bg-white rounded-lg shadow-md hover:shadow-lg transition transform hover:scale-[1.02]">
                     <img src="${item.thumbnailUrl || 'https://via.placeholder.com/400x225?text=NO+THUMBNAIL'}" alt="${item.title} ${item.episode}" class="w-full h-auto object-cover rounded-t-lg aspect-video">
                     <div class="p-3">
                         <p class="text-sm font-semibold text-gray-700 leading-tight">${item.title}</p>
