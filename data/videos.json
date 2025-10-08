@@ -404,7 +404,7 @@
     "subtitle": "Agito ep 1",
     "episode": "EPS 1",
     "url": "https://res.cloudinary.com/dpu88eprx/image/upload/v1759678262/3iHHmX7txgjptGkdqY3Q6V0r0Fk_c9kbkt.jpg",
-    "thumbnailUrl": "https://res.cloudinary.com/dpu88eprx/image/upload/v1759678262/3iHHmX7txgjptGkdqY3Q6V0r0Fk_c9kbkt.jpg"
+    "thumbnailUrl": "https://res.cloudinary.com/dpu88eprx/image/upload/v1759913975/rEwSW8hhgxrX367LPWOTYND9BJg_gsia0o.jpg"
   },
   {
     "id": "kuuga_1",
@@ -413,7 +413,7 @@
     "subtitle": "Kuga ep 1",
     "episode": "EPS 1",
     "url": "https://go.screenpal.com/watch/cT6j6gnbV1H",
-    "thumbnailUrl": "https://res.cloudinary.com/dpu88eprx/image/upload/v1759678262/3iHHmX7txgjptGkdqY3Q6V0r0Fk_c9kbkt.jpg"
+    "thumbnailUrl": "https://res.cloudinary.com/dpu88eprx/image/upload/v1759913976/3OcTrbZa1xX0pil7N7KGXCVk0kL_tjn9y6.jpg"
   },
   {
     "id": "gokaiger_1",
@@ -450,5 +450,50 @@
     "episode": "EPS 1",
     "url": "https://streamable.com/klg49p",
     "thumbnailUrl": "https://i.ibb.co.com/XrDsDB2f/e-ODY3s9-Ww5sz95-Mn-Img-E4-RWhw-Cu-jpg-1456-2184.jpg"
+  },
+  {
+    "id": "gozyuger_1",
+    "category": "SUPER SENTAI",
+    "title": "GOZYUGER",
+    "subtitle": "Ep 1",
+    "episode": "EPS 1",
+    "url": "https://res.cloudinary.com/dpu88eprx/image/upload/v1759913975/rEwSW8hhgxrX367LPWOTYND9BJg_gsia0o.jpg",
+    "thumbnailUrl": "https://res.cloudinary.com/dpu88eprx/image/upload/v1759913975/rEwSW8hhgxrX367LPWOTYND9BJg_gsia0o.jpg"
+  },
+  {
+    "id": "Boonboomger_1",
+    "category": "SUPER SENTAI",
+    "title": "BOONBOOMGER",
+    "subtitle": "Ep 1",
+    "episode": "EPS 1",
+    "url": "https://res.cloudinary.com/dpu88eprx/image/upload/v1759913975/rEwSW8hhgxrX367LPWOTYND9BJg_gsia0o.jpg",
+    "thumbnailUrl": "https://res.cloudinary.com/dpu88eprx/image/upload/v1759913975/rEwSW8hhgxrX367LPWOTYND9BJg_gsia0o.jpg"
+  },
+  {
+    "id": "King-Ohger_1",
+    "category": "SUPER SENTAI",
+    "title": "KING-OHGER",
+    "subtitle": "Ep 1",
+    "episode": "EPS 1",
+    "url": "https://res.cloudinary.com/dpu88eprx/image/upload/v1759913975/rEwSW8hhgxrX367LPWOTYND9BJg_gsia0o.jpg",
+    "thumbnailUrl": "https://res.cloudinary.com/dpu88eprx/image/upload/v1759913975/rEwSW8hhgxrX367LPWOTYND9BJg_gsia0o.jpg"
+  },
+  {
+    "id": "Donbrothers_1",
+    "category": "SUPER SENTAI",
+    "title": "DONBROTHERS",
+    "subtitle": "Ep 1",
+    "episode": "EPS 1",
+    "url": "https://res.cloudinary.com/dpu88eprx/image/upload/v1759913975/rEwSW8hhgxrX367LPWOTYND9BJg_gsia0o.jpg",
+    "thumbnailUrl": "https://res.cloudinary.com/dpu88eprx/image/upload/v1759913975/rEwSW8hhgxrX367LPWOTYND9BJg_gsia0o.jpg"
+  },
+  {
+    "id": "justirisers_1",
+    "category": "GENSEISHIN JUSTIRISERS",
+    "title": "GENSEISHIN JUSTIRISERS",
+    "subtitle": "Ep 1",
+    "episode": "EPS 1",
+    "url": "https://res.cloudinary.com/dpu88eprx/image/upload/v1759913975/rEwSW8hhgxrX367LPWOTYND9BJg_gsia0o.jpg",
+    "thumbnailUrl": "https://res.cloudinary.com/dpu88eprx/image/upload/v1759913975/rEwSW8hhgxrX367LPWOTYND9BJg_gsia0o.jpg"
   }
 ]
