@@ -33,7 +33,7 @@
     "subtitle": "awal perubahan aruto menjadi zero one",
     "episode": "EPS 33",
     "url": "https://streamable.com/klg49p",
-    "thumbnailUrl": "https://images.streamable.com/image/klg49p.jpg"
+    "thumbnailUrl": "https://res.cloudinary.com/dpu88eprx/image/upload/v1759678262/3iHHmX7txgjptGkdqY3Q6V0r0Fk_c9kbkt.jpg"
   },
   {
     "id": "gavv_34",
@@ -42,7 +42,7 @@
     "subtitle": "Pertarungan melawan Humagear pertama",
     "episode": "EPS 34",
     "url": "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
-    "thumbnailUrl": "https://picsum.photos/400/225?random=1"
+    "thumbnailUrl": "https://res.cloudinary.com/dpu88eprx/image/upload/v1759678262/3iHHmX7txgjptGkdqY3Q6V0r0Fk_c9kbkt.jpg"
   },
   {
     "id": "gavv_35",
@@ -51,7 +51,7 @@
     "subtitle": "awal perubahan aruto menjadi zero one",
     "episode": "EPS 35",
     "url": "https://streamable.com/klg49p",
-    "thumbnailUrl": "https://images.streamable.com/image/klg49p.jpg"
+    "thumbnailUrl": "https://res.cloudinary.com/dpu88eprx/image/upload/v1759678262/3iHHmX7txgjptGkdqY3Q6V0r0Fk_c9kbkt.jpg"
   },
   {
     "id": "gavv_36",
@@ -60,7 +60,7 @@
     "subtitle": "Pertarungan melawan Humagear pertama",
     "episode": "EPS 36",
     "url": "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
-    "thumbnailUrl": "https://picsum.photos/400/225?random=1"
+    "thumbnailUrl": "https://res.cloudinary.com/dpu88eprx/image/upload/v1759678262/3iHHmX7txgjptGkdqY3Q6V0r0Fk_c9kbkt.jpg"
   },
   {
     "id": "gavv_37",
@@ -69,7 +69,7 @@
     "subtitle": "awal perubahan aruto menjadi zero one",
     "episode": "EPS 37",
     "url": "https://streamable.com/klg49p",
-    "thumbnailUrl": "https://images.streamable.com/image/klg49p.jpg"
+    "thumbnailUrl": "https://res.cloudinary.com/dpu88eprx/image/upload/v1759678262/3iHHmX7txgjptGkdqY3Q6V0r0Fk_c9kbkt.jpg"
   },
   {
     "id": "gavv_38",
@@ -78,7 +78,7 @@
     "subtitle": "Pertarungan melawan Humagear pertama",
     "episode": "EPS 38",
     "url": "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
-    "thumbnailUrl": "https://picsum.photos/400/225?random=1"
+    "thumbnailUrl": "https://res.cloudinary.com/dpu88eprx/image/upload/v1759678262/3iHHmX7txgjptGkdqY3Q6V0r0Fk_c9kbkt.jpg"
   },
   {
     "id": "gavv_39",
@@ -87,7 +87,7 @@
     "subtitle": "awal perubahan aruto menjadi zero one",
     "episode": "EPS 39",
     "url": "https://streamable.com/klg49p",
-    "thumbnailUrl": "https://images.streamable.com/image/klg49p.jpg"
+    "thumbnailUrl": "https://res.cloudinary.com/dpu88eprx/image/upload/v1759678262/3iHHmX7txgjptGkdqY3Q6V0r0Fk_c9kbkt.jpg"
   },
   {
     "id": "gavv_40",
@@ -96,7 +96,7 @@
     "subtitle": "Pertarungan melawan Humagear pertama",
     "episode": "EPS 40",
     "url": "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
-    "thumbnailUrl": "https://picsum.photos/400/225?random=1"
+    "thumbnailUrl": "https://res.cloudinary.com/dpu88eprx/image/upload/v1759678262/3iHHmX7txgjptGkdqY3Q6V0r0Fk_c9kbkt.jpg"
   },
   {
     "id": "gotchard_1",
@@ -192,9 +192,9 @@
     "id": "zeroone_6",
     "category": "KAMEN RIDER",
     "title": "ZERO ONE",
-    "subtitle": "Episode 6 Zero One",
+    "subtitle": "Aku Ingin Mendengar Suaramu",
     "episode": "EPS 6",
-    "url": "https://dummy.com/ep6",
+    "url": "https://go.screenpal.com/watch/cT6j6gnbV1H",
     "thumbnailUrl": "https://res.cloudinary.com/dpu88eprx/image/upload/v1759678901/qtCksaPz4NLNjuxg6oaWczFNR4x_qsbi6x.jpg"
   },
   {
@@ -331,5 +331,14 @@
     "episode": "EPS 1",
     "url": "https://streamable.com/klg49p",
     "thumbnailUrl": "https://ibb.co.com/mrm05GMn"
+  },
+  {
+    "id": "gavv_41",
+    "category": "KAMEN RIDER",
+    "title": "GAVV",
+    "subtitle": "Gavv ep 41",
+    "episode": "EPS 41",
+    "url": "https://go.screenpal.com/watch/cT6j6gnbV1H",
+    "thumbnailUrl": "https://res.cloudinary.com/dpu88eprx/image/upload/v1759678262/3iHHmX7txgjptGkdqY3Q6V0r0Fk_c9kbkt.jpg"
   }
 ]
