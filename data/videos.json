@@ -1,4 +1,148 @@
 [
+{
+    "id": "zeztz_1",
+    "category": "KAMEN RIDER",
+    "title": "ZEZTZ",
+    "subtitle": "Aku Adalah Presiden dan Kamen Rider",
+    "episode": "EPS 1",
+    "url": "NONE",
+    "thumbnailUrl": "https://res.cloudinary.com/dpu88eprx/image/upload/v1759678901/qtCksaPz4NLNjuxg6oaWczFNR4x_qsbi6x.jpg"
+  },
+  {
+    "id": "gavv_1",
+    "category": "KAMEN RIDER",
+    "title": "GAVV",
+    "subtitle": "awal perubahan aruto menjadi zero one",
+    "episode": "EPS 1",
+    "url": "https://streamable.com/klg49p",
+    "thumbnailUrl": "https://res.cloudinary.com/dpu88eprx/image/upload/v1759678262/3iHHmX7txgjptGkdqY3Q6V0r0Fk_c9kbkt.jpg"
+  },
+  {
+    "id": "gavv_32",
+    "category": "KAMEN RIDER",
+    "title": "GAVV",
+    "subtitle": "Pertarungan melawan Humagear pertama",
+    "episode": "EPS 32",
+    "url": "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+    "thumbnailUrl": "https://res.cloudinary.com/dpu88eprx/image/upload/v1759678262/3iHHmX7txgjptGkdqY3Q6V0r0Fk_c9kbkt.jpg"
+  },
+  {
+    "id": "gavv_33",
+    "category": "KAMEN RIDER",
+    "title": "GAVV",
+    "subtitle": "awal perubahan aruto menjadi zero one",
+    "episode": "EPS 33",
+    "url": "https://streamable.com/klg49p",
+    "thumbnailUrl": "https://images.streamable.com/image/klg49p.jpg"
+  },
+  {
+    "id": "gavv_34",
+    "category": "KAMEN RIDER",
+    "title": "GAVV",
+    "subtitle": "Pertarungan melawan Humagear pertama",
+    "episode": "EPS 34",
+    "url": "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+    "thumbnailUrl": "https://picsum.photos/400/225?random=1"
+  },
+  {
+    "id": "gavv_35",
+    "category": "KAMEN RIDER",
+    "title": "GAVV",
+    "subtitle": "awal perubahan aruto menjadi zero one",
+    "episode": "EPS 35",
+    "url": "https://streamable.com/klg49p",
+    "thumbnailUrl": "https://images.streamable.com/image/klg49p.jpg"
+  },
+  {
+    "id": "gavv_36",
+    "category": "KAMEN RIDER",
+    "title": "GAVV",
+    "subtitle": "Pertarungan melawan Humagear pertama",
+    "episode": "EPS 36",
+    "url": "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+    "thumbnailUrl": "https://picsum.photos/400/225?random=1"
+  },
+  {
+    "id": "gavv_37",
+    "category": "KAMEN RIDER",
+    "title": "GAVV",
+    "subtitle": "awal perubahan aruto menjadi zero one",
+    "episode": "EPS 37",
+    "url": "https://streamable.com/klg49p",
+    "thumbnailUrl": "https://images.streamable.com/image/klg49p.jpg"
+  },
+  {
+    "id": "gavv_38",
+    "category": "KAMEN RIDER",
+    "title": "GAVV",
+    "subtitle": "Pertarungan melawan Humagear pertama",
+    "episode": "EPS 38",
+    "url": "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+    "thumbnailUrl": "https://picsum.photos/400/225?random=1"
+  },
+  {
+    "id": "gavv_39",
+    "category": "KAMEN RIDER",
+    "title": "GAVV",
+    "subtitle": "awal perubahan aruto menjadi zero one",
+    "episode": "EPS 39",
+    "url": "https://streamable.com/klg49p",
+    "thumbnailUrl": "https://images.streamable.com/image/klg49p.jpg"
+  },
+  {
+    "id": "gavv_40",
+    "category": "KAMEN RIDER",
+    "title": "GAVV",
+    "subtitle": "Pertarungan melawan Humagear pertama",
+    "episode": "EPS 40",
+    "url": "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+    "thumbnailUrl": "https://picsum.photos/400/225?random=1"
+  },
+  {
+    "id": "gotchard_1",
+    "category": "KAMEN RIDER",
+    "title": "GOTCHARD",
+    "subtitle": "Aku Adalah Presiden dan Kamen Rider",
+    "episode": "EPS 1",
+    "url": "NONE",
+    "thumbnailUrl": "https://res.cloudinary.com/dpu88eprx/image/upload/v1759678901/qtCksaPz4NLNjuxg6oaWczFNR4x_qsbi6x.jpg"
+  },
+  {
+    "id": "geats_01",
+    "category": "KAMEN RIDER",
+    "title": "GEATS",
+    "subtitle": "Pertarungan melawan Humagear pertama",
+    "episode": "EPS 40",
+    "url": "None",
+    "thumbnailUrl": "https://picsum.photos/400/225?random=1"
+  },
+  {
+    "id": "revice_01",
+    "category": "KAMEN RIDER",
+    "title": "REVICE",
+    "subtitle": "Pertarungan melawan Humagear pertama",
+    "episode": "EPS 40",
+    "url": "None",
+    "thumbnailUrl": "https://picsum.photos/400/225?random=1"
+  },
+  {
+    "id": "saber_1",
+    "category": "KAMEN RIDER",
+    "title": "SABER",
+    "subtitle": "awal perubahan aruto menjadi zero one",
+    "episode": "EPS 1",
+    "url": "https://streamable.com/klg49p",
+    "thumbnailUrl": "https://res.cloudinary.com/dpu88eprx/image/upload/v1759842286/xpHwEeattFtP2YhozENNrK5NYmC_bsiv2t.jpg"
+  },
+  {
+    "id": "saber_2",
+    "category": "KAMEN RIDER",
+    "title": "SABER",
+    "subtitle": "Pertarungan melawan Humagear pertama",
+    "episode": "EPS 2",
+    "url": "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+    "thumbnailUrl": "https://res.cloudinary.com/dpu88eprx/image/upload/v1759842286/xpHwEeattFtP2YhozENNrK5NYmC_bsiv2t.jpg"
+  },
   {
     "id": "zeroone_01",
     "category": "KAMEN RIDER",
@@ -63,108 +207,90 @@
     "thumbnailUrl": "https://res.cloudinary.com/dpu88eprx/image/upload/v1759678901/qtCksaPz4NLNjuxg6oaWczFNR4x_qsbi6x.jpg"
   },
   {
-    "id": "saber_1",
+    "id": "zio_1",
     "category": "KAMEN RIDER",
-    "title": "SABER",
-    "subtitle": "awal perubahan aruto menjadi zero one",
-    "episode": "EPS 1",
-    "url": "https://streamable.com/klg49p",
-    "thumbnailUrl": "https://res.cloudinary.com/dpu88eprx/image/upload/v1759842286/xpHwEeattFtP2YhozENNrK5NYmC_bsiv2t.jpg"
-  },
-  {
-    "id": "saber_2",
-    "category": "KAMEN RIDER",
-    "title": "SABER",
-    "subtitle": "Pertarungan melawan Humagear pertama",
-    "episode": "EPS 2",
-    "url": "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
-    "thumbnailUrl": "https://res.cloudinary.com/dpu88eprx/image/upload/v1759842286/xpHwEeattFtP2YhozENNrK5NYmC_bsiv2t.jpg"
-  },
-  {
-    "id": "gavv_1",
-    "category": "KAMEN RIDER",
-    "title": "GAVV",
+    "title": "ZI-0",
     "subtitle": "awal perubahan aruto menjadi zero one",
     "episode": "EPS 1",
     "url": "https://streamable.com/klg49p",
     "thumbnailUrl": "https://res.cloudinary.com/dpu88eprx/image/upload/v1759678262/3iHHmX7txgjptGkdqY3Q6V0r0Fk_c9kbkt.jpg"
   },
   {
-    "id": "gavv_32",
+    "id": "build_1",
     "category": "KAMEN RIDER",
-    "title": "GAVV",
+    "title": "BUILD",
     "subtitle": "Pertarungan melawan Humagear pertama",
     "episode": "EPS 32",
     "url": "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
     "thumbnailUrl": "https://res.cloudinary.com/dpu88eprx/image/upload/v1759678262/3iHHmX7txgjptGkdqY3Q6V0r0Fk_c9kbkt.jpg"
   },
   {
-    "id": "gavv_33",
+    "id": "ex-aid_1",
     "category": "KAMEN RIDER",
-    "title": "GAVV",
+    "title": "EX-AID",
     "subtitle": "awal perubahan aruto menjadi zero one",
     "episode": "EPS 33",
     "url": "https://streamable.com/klg49p",
     "thumbnailUrl": "https://images.streamable.com/image/klg49p.jpg"
   },
   {
-    "id": "gavv_34",
+    "id": "ghost_1",
     "category": "KAMEN RIDER",
-    "title": "GAVV",
+    "title": "GHOST",
     "subtitle": "Pertarungan melawan Humagear pertama",
     "episode": "EPS 34",
     "url": "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
     "thumbnailUrl": "https://picsum.photos/400/225?random=1"
   },
   {
-    "id": "gavv_35",
+    "id": "drive_1",
     "category": "KAMEN RIDER",
-    "title": "GAVV",
+    "title": "DRIVE",
     "subtitle": "awal perubahan aruto menjadi zero one",
     "episode": "EPS 35",
     "url": "https://streamable.com/klg49p",
     "thumbnailUrl": "https://images.streamable.com/image/klg49p.jpg"
   },
   {
-    "id": "dgavv_36",
+    "id": "gaim_1",
     "category": "KAMEN RIDER",
-    "title": "GAVV",
+    "title": "GAIM",
     "subtitle": "Pertarungan melawan Humagear pertama",
     "episode": "EPS 36",
     "url": "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
     "thumbnailUrl": "https://picsum.photos/400/225?random=1"
   },
   {
-    "id": "gavv_37",
+    "id": "wizard_1",
     "category": "KAMEN RIDER",
-    "title": "GAVV",
+    "title": "WIZARD",
     "subtitle": "awal perubahan aruto menjadi zero one",
     "episode": "EPS 37",
     "url": "https://streamable.com/klg49p",
     "thumbnailUrl": "https://images.streamable.com/image/klg49p.jpg"
   },
   {
-    "id": "gavv_38",
+    "id": "fourze_1",
     "category": "KAMEN RIDER",
-    "title": "GAVV",
+    "title": "FOURZE",
     "subtitle": "Pertarungan melawan Humagear pertama",
     "episode": "EPS 38",
     "url": "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
     "thumbnailUrl": "https://picsum.photos/400/225?random=1"
   },
   {
-    "id": "gavv_39",
+    "id": "ooo_1",
     "category": "KAMEN RIDER",
-    "title": "GAVV",
+    "title": "OOO (OZU)",
     "subtitle": "awal perubahan aruto menjadi zero one",
     "episode": "EPS 39",
     "url": "https://streamable.com/klg49p",
     "thumbnailUrl": "https://images.streamable.com/image/klg49p.jpg"
   },
   {
-    "id": "gavv_40",
+    "id": "w_1",
     "category": "KAMEN RIDER",
-    "title": "GAVV",
+    "title": "W (DOUBLE)",
     "subtitle": "Pertarungan melawan Humagear pertama",
     "episode": "EPS 40",
     "url": "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
@@ -198,11 +324,11 @@
     "thumbnailUrl": "https://i.ibb.co.com/XrDsDB2f/e-ODY3s9-Ww5sz95-Mn-Img-E4-RWhw-Cu-jpg-1456-2184.jpg"
   },
   {
-    "id": "Happy_brithday2",
+    "id": "blezar_1",
     "category": "ULTRAMAN",
-    "title": "Testingman",
+    "title": "BLEZAR",
     "subtitle": "Ucapan ultah untuk user",
-    "episode": "EPS 2",
+    "episode": "EPS 1",
     "url": "https://streamable.com/klg49p",
     "thumbnailUrl": "https://ibb.co.com/mrm05GMn"
   }
