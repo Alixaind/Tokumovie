@@ -5,6 +5,8 @@
     "title": "ZEZTZ",
     "subtitle": "Aku Adalah Presiden dan Kamen Rider",
     "episode": "EPS 1",
+    "sinopsis":"lemon tetes"
+    "descripsi":"lemon tete cokocips"
     "url": "https://res.cloudinary.com/dpu88eprx/image/upload/v1759842927/6zyJK0unQorIy5cpPJu7Z4ZAakb_ttai2v.jpg",
     "thumbnailUrl": "https://res.cloudinary.com/dpu88eprx/image/upload/v1759842927/6zyJK0unQorIy5cpPJu7Z4ZAakb_ttai2v.jpg"
   },
@@ -96,6 +98,33 @@
     "subtitle": "Pertarungan melawan Humagear pertama",
     "episode": "EPS 40",
     "url": "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+    "thumbnailUrl": "https://res.cloudinary.com/dpu88eprx/image/upload/v1759678262/3iHHmX7txgjptGkdqY3Q6V0r0Fk_c9kbkt.jpg"
+  },
+  {
+    "id": "gavv_41",
+    "category": "KAMEN RIDER",
+    "title": "GAVV",
+    "subtitle": "Gavv ep 41",
+    "episode": "EPS 41",
+    "url": "https://go.screenpal.com/watch/cT6j6gnbV1H",
+    "thumbnailUrl": "https://res.cloudinary.com/dpu88eprx/image/upload/v1759678262/3iHHmX7txgjptGkdqY3Q6V0r0Fk_c9kbkt.jpg"
+  },
+  {
+    "id": "gavv_42",
+    "category": "KAMEN RIDER",
+    "title": "GAVV",
+    "subtitle": "Gavv ep 42",
+    "episode": "EPS 42",
+    "url": "https://go.screenpal.com/watch/cT6j6gnbV1H",
+    "thumbnailUrl": "https://res.cloudinary.com/dpu88eprx/image/upload/v1759678262/3iHHmX7txgjptGkdqY3Q6V0r0Fk_c9kbkt.jpg"
+  },
+  {
+    "id": "gavv_43",
+    "category": "KAMEN RIDER",
+    "title": "GAVV",
+    "subtitle": "Gavv ep 43",
+    "episode": "EPS 43",
+    "url": "https://go.screenpal.com/watch/cT6j6gnbV1H",
     "thumbnailUrl": "https://res.cloudinary.com/dpu88eprx/image/upload/v1759678262/3iHHmX7txgjptGkdqY3Q6V0r0Fk_c9kbkt.jpg"
   },
   {
@@ -297,51 +326,6 @@
     "thumbnailUrl": "https://res.cloudinary.com/dpu88eprx/image/upload/v1759914011/kYkpbyTDNeJfhTGt6s9VZeYNRTx_r2tdew.jpg"
   },
   {
-    "id": "gokaiger_1",
-    "category": "SUPER SENTAI",
-    "title": "GOKAIGER",
-    "subtitle": "awal perubahan aruto menjadi zero one",
-    "episode": "EPS 1",
-    "url": "https://streamable.com/klg49p",
-    "thumbnailUrl": "https://res.cloudinary.com/dpu88eprx/image/upload/v1759843627/yHHf6ERcZMp3av3Bw41FYR68F9I.jpg_710_1000_uyadnk.jpg"
-  },
-  {
-    "id": "gokaiger_2",
-    "category": "SUPER SENTAI",
-    "title": "GOKAIGER",
-    "subtitle": "Pertarungan melawan Humagear pertama",
-    "episode": "EPS 2",
-    "url": "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
-    "thumbnailUrl": "https://res.cloudinary.com/dpu88eprx/image/upload/v1759843627/yHHf6ERcZMp3av3Bw41FYR68F9I.jpg_710_1000_uyadnk.jpg"
-  },
-  {
-    "id": "Happy_brithday",
-    "category": "ULTRAMAN",
-    "title": "Testingman",
-    "subtitle": "Ucapan ultah user",
-    "episode": "EPS 1",
-    "url": "https://go.screenpal.com/watch/cTQvfFnDaX5",
-    "thumbnailUrl": "https://i.ibb.co.com/XrDsDB2f/e-ODY3s9-Ww5sz95-Mn-Img-E4-RWhw-Cu-jpg-1456-2184.jpg"
-  },
-  {
-    "id": "blezar_1",
-    "category": "ULTRAMAN",
-    "title": "BLEZAR",
-    "subtitle": "Ucapan ultah untuk user",
-    "episode": "EPS 1",
-    "url": "https://streamable.com/klg49p",
-    "thumbnailUrl": "https://ibb.co.com/mrm05GMn"
-  },
-  {
-    "id": "gavv_41",
-    "category": "KAMEN RIDER",
-    "title": "GAVV",
-    "subtitle": "Gavv ep 41",
-    "episode": "EPS 41",
-    "url": "https://go.screenpal.com/watch/cT6j6gnbV1H",
-    "thumbnailUrl": "https://res.cloudinary.com/dpu88eprx/image/upload/v1759678262/3iHHmX7txgjptGkdqY3Q6V0r0Fk_c9kbkt.jpg"
-  },
-  {
     "id": "decade_1",
     "category": "KAMEN RIDER",
     "title": "DECADE",
@@ -430,5 +414,41 @@
     "episode": "EPS 1",
     "url": "https://go.screenpal.com/watch/cT6j6gnbV1H",
     "thumbnailUrl": "https://res.cloudinary.com/dpu88eprx/image/upload/v1759678262/3iHHmX7txgjptGkdqY3Q6V0r0Fk_c9kbkt.jpg"
+  }
+  {
+    "id": "gokaiger_1",
+    "category": "SUPER SENTAI",
+    "title": "GOKAIGER",
+    "subtitle": "awal perubahan aruto menjadi zero one",
+    "episode": "EPS 1",
+    "url": "https://streamable.com/klg49p",
+    "thumbnailUrl": "https://res.cloudinary.com/dpu88eprx/image/upload/v1759843627/yHHf6ERcZMp3av3Bw41FYR68F9I.jpg_710_1000_uyadnk.jpg"
+  },
+  {
+    "id": "gokaiger_2",
+    "category": "SUPER SENTAI",
+    "title": "GOKAIGER",
+    "subtitle": "Pertarungan melawan Humagear pertama",
+    "episode": "EPS 2",
+    "url": "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+    "thumbnailUrl": "https://res.cloudinary.com/dpu88eprx/image/upload/v1759843627/yHHf6ERcZMp3av3Bw41FYR68F9I.jpg_710_1000_uyadnk.jpg"
+  },
+  {
+    "id": "Happy_brithday",
+    "category": "ULTRAMAN",
+    "title": "Testingman",
+    "subtitle": "Ucapan ultah user",
+    "episode": "EPS 1",
+    "url": "https://go.screenpal.com/watch/cTQvfFnDaX5",
+    "thumbnailUrl": "https://i.ibb.co.com/XrDsDB2f/e-ODY3s9-Ww5sz95-Mn-Img-E4-RWhw-Cu-jpg-1456-2184.jpg"
+  },
+  {
+    "id": "blezar_1",
+    "category": "ULTRAMAN",
+    "title": "BLEZAR",
+    "subtitle": "Ucapan ultah untuk user",
+    "episode": "EPS 1",
+    "url": "https://streamable.com/klg49p",
+    "thumbnailUrl": "https://i.ibb.co.com/XrDsDB2f/e-ODY3s9-Ww5sz95-Mn-Img-E4-RWhw-Cu-jpg-1456-2184.jpg"
   }
 ]
