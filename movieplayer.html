@@ -48,6 +48,8 @@
             <h1 id="videoTitle" class="text-2xl font-bold text-gray-800">Memuat...</h1>
             <h2 id="videoSubtitle" class="text-lg text-gray-600 mb-2"></h2>
             <p id="videoEpisode" class="text-md text-gray-500"></p>
+            <h2 id="sinopsis" class="text-lg text-gray-600 mb-2"></h2>
+            <h2 id="descripsi" class="text-lg text-gray-600 mb-2"></h2>
         </div>
         
         <h2 class="text-xl font-bold text-gray-800 mt-8 mb-4 border-b pb-2">Episode Lainnya</h2>
@@ -64,6 +66,8 @@
         const videoSubtitle = document.getElementById('videoSubtitle');
         const videoEpisode = document.getElementById('videoEpisode');
         const videoCategory = document.getElementById('videoCategory');
+        const sinopsis = document.getElementById('sinopsis');
+        const descripsi = document.getElementById('descripsi');
         const relatedEpisodesContainer = document.getElementById('relatedEpisodesContainer'); 
 
         /** Mendapatkan ID Video dari URL (misal: ?id=zeroone_01) */
@@ -209,6 +213,8 @@
             videoSubtitle.textContent = data.subtitle;
             videoEpisode.textContent = data.episode;
             videoCategory.textContent = data.category;
+            sinopsis.textContent = data.sinopsis
+            descripsi.textContent = data.desc
             document.title = `${data.title} ${data.episode} | TokuMovie`;
         }
 
