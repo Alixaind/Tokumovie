@@ -230,9 +230,9 @@
     "id": "zeroone_7",
     "category": "KAMEN RIDER",
     "title": "ZERO ONE",
-    "subtitle": "Episode 7 Zero One",
+    "subtitle": "Aku Berdarah Panas HumaGear Sensei!",
     "episode": "EPS 7",
-    "url": "https://dummy.com/ep7",
+    "url": "https://go.screenpal.com/watch/cT6jInnbVEk",
     "thumbnailUrl": "https://res.cloudinary.com/dpu88eprx/image/upload/v1759678901/qtCksaPz4NLNjuxg6oaWczFNR4x_qsbi6x.jpg"
   },
   {
@@ -495,5 +495,23 @@
     "episode": "EPS 1",
     "url": "https://res.cloudinary.com/dpu88eprx/image/upload/v1759913975/rEwSW8hhgxrX367LPWOTYND9BJg_gsia0o.jpg",
     "thumbnailUrl": "https://res.cloudinary.com/dpu88eprx/image/upload/v1759913975/rEwSW8hhgxrX367LPWOTYND9BJg_gsia0o.jpg"
+  },
+  {
+    "id": "zeroone_8",
+    "category": "KAMEN RIDER",
+    "title": "ZERO ONE",
+    "subtitle": "Dari Sini Kehancuran Dimulai",
+    "episode": "EPS 8",
+    "url": "https://go.screenpal.com/watch/cT6jInnbVEE",
+    "thumbnailUrl": "https://res.cloudinary.com/dpu88eprx/image/upload/v1759678901/qtCksaPz4NLNjuxg6oaWczFNR4x_qsbi6x.jpg"
+  },
+  {
+    "id": "zeroone_9",
+    "category": "KAMEN RIDER",
+    "title": "ZERO ONE",
+    "subtitle": "Kehidupan ini, Akan Aku Jaga",
+    "episode": "EPS 9",
+    "url": "https://go.screenpal.com/watch/cT6jIZnbVd9",
+    "thumbnailUrl": "https://res.cloudinary.com/dpu88eprx/image/upload/v1759678901/qtCksaPz4NLNjuxg6oaWczFNR4x_qsbi6x.jpg"
   }
 ]
