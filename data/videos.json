@@ -684,5 +684,50 @@
     "episode": "EPS 1",
     "url": "https://dammy.com",
     "thumbnailUrl": ""
+  },
+  {
+    "id": "Kiramager_1",
+    "category": "SUPER SENTAI",
+    "title": "MASHIN SENTAI KIRAMAGER",
+    "subtitle": "Ep 1",
+    "episode": "EPS 1",
+    "url": "https://dammy.com",
+    "thumbnailUrl": "https://dammy.com"
+  },
+  {
+    "id": "RYUSOULGER_1",
+    "category": "SUPER SENTAI",
+    "title": "KISHIRYU SENTAI RYUSOULGER",
+    "subtitle": "Eps 1",
+    "episode": "EPS 1",
+    "url": "https://dammy.com",
+    "thumbnailUrl": "https://dammy.com"
+  },
+  {
+    "id": "LupinrangerVSPatranger_1",
+    "category": "SUPER SENTAI",
+    "title": "KAITOU SENTAI LUPINRANGER VS KEISATSU SENTAI PATRANGER",
+    "subtitle": "Ep 1",
+    "episode": "EPS 1",
+    "url": "https://dammy.com",
+    "thumbnailUrl": "https://dammy.com"
+  },
+  {
+    "id": "kyuranger_1",
+    "category": "SUPER SENTAI",
+    "title": "UCHUU SENTAI KYURANGER",
+    "subtitle": "Ep 1",
+    "episode": "EPS 1",
+    "url": "https://dammy.com",
+    "thumbnailUrl": "https://dammy.com"
+  },
+  {
+    "id": "zyuohger_1",
+    "category": "SUPER SENTAI",
+    "title": "DOUBUTSU SENTAI ZYUOHGER",
+    "subtitle": "Ep 1",
+    "episode": "EPS 1",
+    "url": "https://dammy.com",
+    "thumbnailUrl": "https://dammy.com"
   }
 ]
